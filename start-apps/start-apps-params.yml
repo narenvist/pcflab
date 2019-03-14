@@ -4,8 +4,8 @@ vsts_branch: master
 #vsts_token: ((vsts_token)) # your vsts token for the service account
 #concourse-automation-client-id: ((concourse-automation-client-id)) # cf-cli creds
 #concourse-automation-client-secret: ((concourse-automation-client-secret)) # cf-cli creds
-#concourse-automation-client-id: xxxxxxxxxxxxxxx # cf-cli creds
-#concourse-automation-client-secret: xxxxxxxxxxxxxxxx # cf-cli creds
+concourse-automation-client-id: admin # cf-cli creds
+concourse-automation-client-secret: RGu2PvPVBWzik8krDOP9jah3boAXYq-h # cf-cli creds
 #
 #######################################################
 # DR SETTINGS: PRIMARY SC SITE
