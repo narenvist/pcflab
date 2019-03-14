@@ -7,7 +7,7 @@ image_resource:
   source: 
   repository: ubuntu
     #insecure_registries: ["artifactory.pepsico.pvt"]
-    tag: 'latest'
+    #tag: 'latest'
 
 params:
   API_ENDPOINT: 
