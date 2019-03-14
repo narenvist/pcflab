@@ -21,9 +21,5 @@ inputs:
   - name: pcflab
 
 run:
- path: bash
- - -excl
-  - |-
- chmod +x pcflab/start-apps/tasks/cf-deployment.sh
- ./pcflab/start-apps/tasks/cf-deployment.sh
+  path: pcflab/start-apps/tasks/cf-deployment.sh
 
