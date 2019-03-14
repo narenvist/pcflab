@@ -9,8 +9,8 @@ resources:
 - name: pcflab
   type: git
   source:
-    uri: ((vsts_url))
-    branch: ((vsts_branch))
+    uri: https://github.com/kishorepkr/pcflab.git
+    branch: master
     #username: ((vsts_username))
     #password: ((vsts_token))
 
