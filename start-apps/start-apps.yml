@@ -1,27 +1,27 @@
 resource_types:
-- name: pivnet
+- name: kishoregit
   type: docker-image
   source:
-    repository: pivotalcf/pivnet-resource
-    tag: latest-final
+    repository: kishorepkr/pcflab
+    #tag: latest-final
 
 resources:
-- name: misc-repo
+- name: pcflab
   type: git
   source:
     uri: ((vsts_url))
     branch: ((vsts_branch))
-    username: ((vsts_username))
-    password: ((vsts_token))
+    #username: ((vsts_username))
+    #password: ((vsts_token))
 
 jobs:
 - name: ((cf-sub-command))-apps
   plan:
   - aggregate:
-    - get: misc-repo
+    - get: pcflab
       trigger: true
   - task: start-apps
-    file: misc-repo/start-apps/tasks/cf-deployment.yml
+    file: pcflab/start-apps/tasks/cf-deployment.yml
     params:
       API_ENDPOINT: ((cf-api))
       USERNAME: ((concourse-automation-client-id))
