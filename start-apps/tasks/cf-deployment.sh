@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -x
 
 target="cf api $API_ENDPOINT --skip-ssl-validation"
