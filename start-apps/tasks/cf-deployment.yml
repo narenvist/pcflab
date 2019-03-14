@@ -4,8 +4,7 @@ platform: linux
 
 image_resource:
   type: docker-image
-  source:
-    repository: ubuntu
+  source: {repository: busybox}
     #insecure_registries: ["artifactory.pepsico.pvt"]
     tag: 'latest'
 
