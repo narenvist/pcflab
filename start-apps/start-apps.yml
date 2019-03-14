@@ -1,0 +1,31 @@
+resource_types:
+- name: pivnet
+  type: docker-image
+  source:
+    repository: pivotalcf/pivnet-resource
+    tag: latest-final
+
+resources:
+- name: misc-repo
+  type: git
+  source:
+    uri: ((vsts_url))
+    branch: ((vsts_branch))
+    username: ((vsts_username))
+    password: ((vsts_token))
+
+jobs:
+- name: ((cf-sub-command))-apps
+  plan:
+  - aggregate:
+    - get: misc-repo
+      trigger: true
+  - task: start-apps
+    file: misc-repo/start-apps/tasks/cf-deployment.yml
+    params:
+      API_ENDPOINT: ((cf-api))
+      USERNAME: ((concourse-automation-client-id))
+      PASSWORD: ((concourse-automation-client-secret))
+      ORG: ((cf-org))
+      SPACE: ((cf-space))
+      CF_SUB_COMMAND: ((cf-sub-command))
