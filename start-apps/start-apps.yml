@@ -2,7 +2,7 @@ resource_types:
 - name: kishoregit
   type: docker-image
   source:
-    repository: kishorepkr/pcflab
+    repository: nulldriver/cf-cli-resource
     #tag: latest-final
 
 resources:
