@@ -5,21 +5,21 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: artifactory.pepsico.pvt/eip-operations-docker-local-repo/pepsi-ubuntu-pcf
-    insecure_registries: ["artifactory.pepsico.pvt"]
-    tag: 'latest'
+    repository: ubuntu
+    #insecure_registries: ["artifactory.pepsico.pvt"]
+    #tag: 'latest'
 
 params:
-  API_ENDPOINT:
-  USERNAME:
-  PASSWORD:
-  ORG:
-  SPACE:
-  CF_SUB_COMMAND:
+  API_ENDPOINT: 
+  USERNAME: 
+  PASSWORD: 
+  ORG: 
+  SPACE: 
+  CF_SUB_COMMAND: 
 
 inputs:
-  - name: misc-repo
+  - name: pcflab
 
 run:
-  path: misc-repo/start-apps/tasks/cf-deployment.sh
+  path: pcflab/start-apps/tasks/cf-deployment.sh
 
