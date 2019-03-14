@@ -1,5 +1,5 @@
-vsts_url: https://github.com/kishorepkr/pcflab.git #VSTS Pipeline
-vsts_branch: master
+#vsts_url: https://github.com/kishorepkr/pcflab.git #VSTS Pipeline
+#vsts_branch: master
 #vsts_username: ((vsts_username)) # [R] Your github username
 #vsts_token: ((vsts_token)) # your vsts token for the service account
 #concourse-automation-client-id: ((concourse-automation-client-id)) # cf-cli creds
