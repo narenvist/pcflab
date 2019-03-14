@@ -1,9 +1,9 @@
-vsts_url: https://pepsicoit.visualstudio.com/EIPOperations/_git/misc #VSTS Pipeline
+vsts_url: https://github.com/kishorepkr/pcflab.git #VSTS Pipeline
 vsts_branch: master
-vsts_username: ((vsts_username)) # [R] Your github username
-vsts_token: ((vsts_token)) # your vsts token for the service account
-concourse-automation-client-id: ((concourse-automation-client-id)) # cf-cli creds
-concourse-automation-client-secret: ((concourse-automation-client-secret)) # cf-cli creds
+#vsts_username: ((vsts_username)) # [R] Your github username
+#vsts_token: ((vsts_token)) # your vsts token for the service account
+#concourse-automation-client-id: ((concourse-automation-client-id)) # cf-cli creds
+#concourse-automation-client-secret: ((concourse-automation-client-secret)) # cf-cli creds
 #concourse-automation-client-id: xxxxxxxxxxxxxxx # cf-cli creds
 #concourse-automation-client-secret: xxxxxxxxxxxxxxxx # cf-cli creds
 #
@@ -17,9 +17,9 @@ concourse-automation-client-secret: ((concourse-automation-client-secret)) # cf-
 # cf-sub-command: stop
 
 # primary sc site, start applications settings 
-cf-org: latam-test-sc
-cf-space: default
-cf-api: api.system.pcf.dev.azure.intra.pepsico.com
+cf-org: test-org
+cf-space: dev
+cf-api: api.sys.testpcf.pcflabcog.com
 cf-sub-command: start
 #######################################################
 # DR SETTINGS: DR NC SITE
