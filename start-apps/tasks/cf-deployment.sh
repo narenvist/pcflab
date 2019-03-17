@@ -42,18 +42,4 @@ for app in $applications
                           fi
                    done
           done         
-                #eval "cf $CF_SUB_COMMAND $app"
-                #status=$(cf app $app  | grep 'requested state:'| awk '{print $3}')
-
-        #if [ "$STATUS" = "started" ]
-        #then
-         #       echo "$app is started"
-          #      break
-        #else
-         #       echo "$STATUS"
-          #      echo "App not started, trying to restatrt. Attmept $i" | mailx -s "Restart APP $app" ravanaiah.m@cognizant.com
-           #     for ((i=0;i<$COUNT;i++))
-            #    {
-             #   restart_fun
-              #  }
-        #fi
+                
