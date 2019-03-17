@@ -32,6 +32,7 @@ for app in $applications
                                 then
                                         echo "Triggering a mail to user :ravanaiah (ravanaiahweblogic@gail.com)"
                                         mail -s "automation to bring up app failed for $1 app" ravanaiahweblogic@gmail.com <<< "automation to bring up this $i app got failed"
+                                        break
                                 fi
                                 cf start $i
                                 continue
