@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -x
-COUNT=5
+#COUNT=5
 
 target="cf api $API_ENDPOINT --skip-ssl-validation"
 #echo $target
@@ -24,7 +24,7 @@ for app in $applications
                 for j in 1 2 3 4 5
                 do 
                          #cf start $i
-                         STATUS=`cf app $app|grep -e " requested state:"|awk '{print  $3}'`
+                         STATUS=`cf app $app|grep -e "requested state:"|awk '{print  $3}'`
                          if [[ $STATUS == "stopped" ]]
                          then
                                 echo -e "App is still down\n"
