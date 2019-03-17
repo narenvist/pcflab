@@ -25,7 +25,7 @@ for app in $applications
                 do 
                          #cf start $i
                          STATUS= 'cf app $app|grep -e " requested state:"|awk '{print  $3}''
-                         if [[ $STATUS =="stopped" ]]
+                         if [[ $STATUS == "stopped" ]]
                          then
                                 echo -e "App is still down\n"
                                 if [[ $j == 5 ]]
