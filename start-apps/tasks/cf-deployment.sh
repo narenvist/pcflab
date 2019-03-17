@@ -24,11 +24,11 @@ for app in $applications
                 for j in 1 2 3 4 5
                 do 
                          #cf start $i
-                         STATUS= cf app $i | grep -e " requested state:"|awk '{print  $3}'
+                         STATUS= 'cf app $i|grep -e " requested state:"|awk '{print  $3}''
                          if [[ $STATUS =="stopped" ]]
                          then
                                 echo -e "App is still down\n"
-                                if [[ $j == 1 ]]
+                                if [[ $j == 5 ]]
                                 then
                                         echo "Triggering a mail to user :ravanaiah (ravanaiahweblogic@gail.com)"
                                         mail -s "automation to bring up app failed for $1 app" ravanaiahweblogic@gmail.com <<< "automation to bring up this $i app got failed"
