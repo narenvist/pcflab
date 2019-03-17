@@ -37,7 +37,7 @@ for app in $applications
                                 cf start $app
                                 continue
                           else
-                                echo "App is up and running"
+                                echo "$i is up and running"
                                 break
                           fi
                    done
