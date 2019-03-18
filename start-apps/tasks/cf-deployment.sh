@@ -27,12 +27,12 @@ for app in $applications
                          STATUS=`cf app $app|grep -e "requested state:"|awk '{print  $3}'`
                          if [[ $STATUS == "stopped" ]]
                          then
-                                echo -e "App is still down\n"
-				mail -s "Warning Attempt:$j to start $app app failed"  ravanaiahweblogic@gmail.com <<< "automation to bring up this $app app got failed"
+                                echo -e "App is down\n"
+				mail -s "Warning Attempt:$j to start $app app failed"  kishore.ponnuru.contractor@pepsico.com <<< "automation to bring up this $app app got failed"
                                 if [[ $j == 5 ]]
                                 then
                                         echo "Triggering a mail to user :ravanaiah (ravanaiahweblogic@gail.com)"
-                                        mail -s "automation to bring up app failed for $app app" ravanaiahweblogic@gmail.com <<< "automation to bring up this $app app got failed"
+                                        mail -s "CRITICAL: Automation to bring up app failed for $app app" kishore.ponnuru.contractor@pepsico.com <<< "automation to bring up this $app app got failed"
                                         break
                                 fi
                                 cf start $app
