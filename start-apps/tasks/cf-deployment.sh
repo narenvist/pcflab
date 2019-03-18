@@ -30,13 +30,14 @@ for app in $applications
                                 echo -e "App is down\n"			
                                 if [[ $iteration == $COUNT ]]
                                 then
-                                        echo "Triggering a mail to user :ravanaiah (ravanaiahweblogic@gail.com)"
+                                        echo "Triggering a mail to user :kishore (kishore.ponnuru.contractor@pepsico.com)"
                                         #mail -s "CRITICAL: Automation to bring up app failed for $app app" kishore.ponnuru.contractor@pepsico.com <<< "automation to bring up this $app app got failed"
                                         break
-                                fi
+                                else
                                 mail -s "Warning Attempt:$j to start $app app failed"  kishore.ponnuru.contractor@pepsico.com <<< "automation to bring up this $app app got failed"
 				cf $CF_SUB_COMMAND $app
                                 continue
+				fi
                           else
                                 echo "$app is up and running"
                                 break
