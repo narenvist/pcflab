@@ -28,6 +28,7 @@ for app in $applications
                          if [[ $STATUS == "stopped" ]]
                          then
                                 echo -e "App is still down\n"
+				mail -s "Warning Attempt:$j to start $app app failed"  ravanaiahweblogic@gmail.com <<< "automation to bring up this $app app got failed"
                                 if [[ $j == 5 ]]
                                 then
                                         echo "Triggering a mail to user :ravanaiah (ravanaiahweblogic@gail.com)"
