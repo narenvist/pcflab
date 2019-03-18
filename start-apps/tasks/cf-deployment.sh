@@ -21,7 +21,7 @@ echo "$CF_SUB_COMMAND the app"
 
 for app in $applications
         do
-                for j in $COUNT
+                for j in $(seq 1 $COUNT)
                 do 
                          #cf start $app
                          STATUS=`cf app $app|grep -e "requested state:"|awk '{print  $3}'`
