@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -x
-#COUNT=5
+COUNT=5
 
 target="cf api $API_ENDPOINT --skip-ssl-validation"
 #echo $target
@@ -21,7 +21,7 @@ echo "$CF_SUB_COMMAND the app"
 
 for app in $applications
         do
-                for j in 1 2 3 4 5
+                for j in $COUNT
                 do 
                          #cf start $app
                          STATUS=`cf app $app|grep -e "requested state:"|awk '{print  $3}'`
