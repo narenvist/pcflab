@@ -35,6 +35,7 @@ for app in $applications
                                         break
                                 else
                                 mail -s "Warning Attempt:$j to start $app app failed"  kishore.ponnuru.contractor@pepsico.com <<< "automation to bring up this $app app got failed"
+				echo "For Iteration:$iteration restarting app $app"
 				cf $CF_SUB_COMMAND $app
                                 continue
 				fi
