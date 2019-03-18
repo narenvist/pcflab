@@ -1,5 +1,5 @@
 resource_types:
-- name: muntha123
+- name: narenvist
   type: docker-image
   source:
     repository: nulldriver/cf-cli-resource
@@ -9,7 +9,7 @@ resources:
 - name: pcflab
   type: git
   source:
-    uri: https://github.com/muntha123/pcflab.git
+    uri: https://github.com/narenvist/pcflab.git
     branch: master
     #username: ((vsts_username))
     #password: ((vsts_token))
