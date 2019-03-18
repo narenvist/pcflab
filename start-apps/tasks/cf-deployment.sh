@@ -23,7 +23,7 @@ for app in $applications
         do
                 for j in 1 2 3 4 5
                 do 
-                         #cf start $i
+                         #cf start $app
                          STATUS=`cf app $app|grep -e "requested state:"|awk '{print  $3}'`
                          if [[ $STATUS == "stopped" ]]
                          then
