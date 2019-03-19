@@ -27,7 +27,7 @@ for app in $applications
                          cf $CF_SUB_COMMAND $app
                          STATUS=`cf app $app | tail -n 1 | awk '{print $2}'`
 			 sleep 5s
-                         if [[ $STATUS == "stopped" ]]
+                         if [[ $STATUS != "running" ]]
                          then
                                 echo -e "App is down\n"			
                                 if [[ $iteration == $COUNT ]]
