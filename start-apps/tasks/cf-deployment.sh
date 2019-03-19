@@ -48,7 +48,9 @@ for app in $applications
 			break
 		fi
 		echo "before increment: $i"
-		$i++
+		#$i++
+		
+		i =$($i+1)
 		echo "after increment: $i"
 	done
 done
