@@ -25,7 +25,7 @@ for app in $applications
                 while [[ $iteration -le $COUNT ]]
                 do 
                          cf $CF_SUB_COMMAND $app
-                         STATUS=`cf app $app|grep -e "requested state:"|awk '{print  $3}'`
+                         STATUS=`cf app $app | tail -n 1 | awk '{print $2}'`
 			 sleep 5s
                          if [[ $STATUS == "stopped" ]]
                          then
