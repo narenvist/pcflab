@@ -50,7 +50,7 @@ for app in $applications
 		echo "before increment: $i"
 		#$i++
 		
-		i =$($i+1)
+		i =$(($i+1))
 		echo "after increment: $i"
 	done
 done
