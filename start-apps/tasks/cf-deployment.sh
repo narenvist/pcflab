@@ -23,7 +23,7 @@ echo "$CF_SUB_COMMAND the app"
 
 for app in $applications
     do
-        while [[ $iteration <= $COUNT ]]
+        while [[ $iteration -le $COUNT ]]
         do 
 			cf $CF_SUB_COMMAND $app
 			STATUS=`cf app $app | tail -n 1 | awk '{print $2}'`
