@@ -23,11 +23,11 @@ echo "$CF_SUB_COMMAND the app"
 
 for app in $applications
     do
-        while [[ $iteration -le $COUNT ]]
+        cf $CF_SUB_COMMAND $app
+	sleep 5s
+	while [[ $iteration -le $COUNT ]]
         do 
-			cf $CF_SUB_COMMAND $app
 			STATUS=`cf app $app | tail -n 1 | awk '{print $2}'`
-			sleep 5s
 			if [[ $STATUS != "running" ]]
 			then
 				echo -e "App is down\n"
@@ -47,6 +47,6 @@ for app in $applications
 				echo "$app is up and running"
 				break
 			fi
-			iteration=`expr $iteration + 1`
+			iteration=$iteration+1
 		done
 	done
