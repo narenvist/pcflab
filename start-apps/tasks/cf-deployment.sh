@@ -28,10 +28,10 @@ for app in $applications
 	while [ $i -le $COUNT ] 
 	do
 		STATUS=`cf app $app | tail -n 1 | awk '{print $2}'`
-		if [[ $STATUS != "running" ]]
+		if [ $STATUS != "running" ]
 		then
 			echo -e "App is down\n"
-			if [[ $i == $COUNT ]]
+			if [ $i == $COUNT ]
 			then
 				echo "Triggering a mail to user :kishore (kishore.ponnuru.contractor@pepsico.com)"
 				#mail -s "CRITICAL: Automation to bring up app failed for $app app" kishore.ponnuru.contractor@pepsico.com <<< "automation to bring up this $app app got failed"
@@ -50,7 +50,7 @@ for app in $applications
 		echo "before increment: "$i
 		#$i++
 		
-		i =$(($i+1))
+		i =$(( $i+1 ))
 		echo "after increment: "$i
 	done
 done
