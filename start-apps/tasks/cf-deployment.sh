@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 set -x
-COUNT=3
+
 
 target="cf api $API_ENDPOINT --skip-ssl-validation"
 #echo $target
