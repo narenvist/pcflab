@@ -25,20 +25,20 @@ for app in $applications
     do
         cf $CF_SUB_COMMAND $app
 	sleep 5s
-	iteration=1
-	while [ $iteration -le $COUNT ]; do
+	i=1
+	while [ $i -le $COUNT ]; do
 		STATUS=`cf app $app | tail -n 1 | awk '{print $2}'`
 		if [[ $STATUS != "running" ]]
 		then
 			echo -e "App is down\n"
-			if [[ $iteration == $COUNT ]]
+			if [[ $i == $COUNT ]]
 			then
 				echo "Triggering a mail to user :kishore (kishore.ponnuru.contractor@pepsico.com)"
 				#mail -s "CRITICAL: Automation to bring up app failed for $app app" kishore.ponnuru.contractor@pepsico.com <<< "automation to bring up this $app app got failed"
 				break
 			else
 				#mail -s "Warning Attempt:$iteration to start $app app failed"  kishore.ponnuru.contractor@pepsico.com <<< "automation to bring up this $app app got failed"
-				echo "For Iteration:$iteration restarting app $app"
+				echo "For Iteration:$i restarting app $app"
 				cf $CF_SUB_COMMAND $app
 				sleep 5s
 				continue
@@ -47,6 +47,6 @@ for app in $applications
 			echo "$app is up and running"
 			break
 		fi
-		let iteration=$iteration+1
+		let i=$i+1
 	done
 done
