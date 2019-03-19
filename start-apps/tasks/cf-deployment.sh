@@ -47,6 +47,6 @@ for app in $applications
 						echo "$app is up and running"
 						break
                     fi
-					iteration=$iteration+1
+				iteration=`expr $iteration + 1`
                 done
 	done
