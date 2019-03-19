@@ -2,7 +2,7 @@
 
 set -x
 COUNT=3
-iteration=1
+
 
 target="cf api $API_ENDPOINT --skip-ssl-validation"
 #echo $target
@@ -25,28 +25,28 @@ for app in $applications
     do
         cf $CF_SUB_COMMAND $app
 	sleep 5s
-	while [[ $iteration -le $COUNT ]]
-        do 
-			STATUS=`cf app $app | tail -n 1 | awk '{print $2}'`
-			if [[ $STATUS != "running" ]]
+	iteration=1
+	while [[ $iteration -le $COUNT ]]; do 
+		STATUS=`cf app $app | tail -n 1 | awk '{print $2}'`
+		if [[ $STATUS != "running" ]]
+		then
+			echo -e "App is down\n"
+			if [[ $iteration == $COUNT ]]
 			then
-				echo -e "App is down\n"
-				if [[ $iteration == $COUNT ]]
-				then
-					echo "Triggering a mail to user :kishore (kishore.ponnuru.contractor@pepsico.com)"
-					#mail -s "CRITICAL: Automation to bring up app failed for $app app" kishore.ponnuru.contractor@pepsico.com <<< "automation to bring up this $app app got failed"
-					break
-				else
-					#mail -s "Warning Attempt:$iteration to start $app app failed"  kishore.ponnuru.contractor@pepsico.com <<< "automation to bring up this $app app got failed"
-					echo "For Iteration:$iteration restarting app $app"
-					cf $CF_SUB_COMMAND $app
-					sleep 5s
-					continue
-				fi
-			else
-				echo "$app is up and running"
+				echo "Triggering a mail to user :kishore (kishore.ponnuru.contractor@pepsico.com)"
+				#mail -s "CRITICAL: Automation to bring up app failed for $app app" kishore.ponnuru.contractor@pepsico.com <<< "automation to bring up this $app app got failed"
 				break
+			else
+				#mail -s "Warning Attempt:$iteration to start $app app failed"  kishore.ponnuru.contractor@pepsico.com <<< "automation to bring up this $app app got failed"
+				echo "For Iteration:$iteration restarting app $app"
+				cf $CF_SUB_COMMAND $app
+				sleep 5s
+				continue
 			fi
-			iteration=$iteration+1
-		done
+		else
+			echo "$app is up and running"
+			break
+		fi
+		let iteration=$iteration+1
 	done
+done
