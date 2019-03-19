@@ -14,7 +14,8 @@ params:
   ORG: 
   SPACE: 
   CF_SUB_COMMAND: 
-
+  COUNT:
+  
 inputs:
   - name: pcflab
 
