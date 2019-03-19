@@ -26,7 +26,7 @@ for app in $applications
         cf $CF_SUB_COMMAND $app
 	sleep 5s
 	iteration=1
-	while [[ $iteration -le $COUNT ]]; do 
+	while [ $iteration -le $COUNT ]; do
 		STATUS=`cf app $app | tail -n 1 | awk '{print $2}'`
 		if [[ $STATUS != "running" ]]
 		then
