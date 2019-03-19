@@ -3,7 +3,6 @@
 set -x
 COUNT=3
 
-
 target="cf api $API_ENDPOINT --skip-ssl-validation"
 #echo $target
 eval $target
@@ -26,7 +25,7 @@ for app in $applications
         cf $CF_SUB_COMMAND $app
 	sleep 5s
 	i=1
-	while [ $i -le $COUNT ]; do
+	while [ "$i" -le "$COUNT" ]; do
 		STATUS=`cf app $app | tail -n 1 | awk '{print $2}'`
 		if [[ $STATUS != "running" ]]
 		then
