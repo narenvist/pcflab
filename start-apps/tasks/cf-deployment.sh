@@ -47,6 +47,8 @@ for app in $applications
 			echo "$app is up and running"
 			break
 		fi
+		echo "before increment: $i"
 		$i++
+		echo "after increment: $i"
 	done
 done
