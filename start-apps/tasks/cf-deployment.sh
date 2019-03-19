@@ -41,7 +41,7 @@ for app in $applications
 				echo "For Iteration:$i restarting app $app"
 				cf $CF_SUB_COMMAND $app
 				sleep 5s
-				continue
+				#continue
 			fi
 		else
 			echo "$app is up and running"
