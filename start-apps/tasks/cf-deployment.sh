@@ -25,7 +25,8 @@ for app in $applications
         cf $CF_SUB_COMMAND $app
 	sleep 5s
 	i=1
-	while [ "$i" -le "$COUNT" ]; do
+	while [ "$i" -le "$COUNT" ] 
+	do
 		STATUS=`cf app $app | tail -n 1 | awk '{print $2}'`
 		if [[ $STATUS != "running" ]]
 		then
@@ -46,6 +47,6 @@ for app in $applications
 			echo "$app is up and running"
 			break
 		fi
-		let i=$i+1
+		i=`expr $i + 1`
 	done
 done
