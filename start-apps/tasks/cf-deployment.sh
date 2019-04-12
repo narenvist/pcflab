@@ -37,10 +37,10 @@ do
 			if [ $i == $COUNT ]
 			then
 				echo "Triggering a mail to :EIAP Alerts (ITEIAPALERTS@pepsico.com)"
-				mail -s "CRITICAL: Automation to bring up app failed for $app app" ITEIAPALERTS@pepsico.com  <<< "automation to bring up this $app app got failed"
+				#mail -s "CRITICAL: Automation to bring up app failed for $app app" ITEIAPALERTS@pepsico.com  <<< "automation to bring up this $app app got failed"
 				break
 			else
-				mail -s "Warning Attempt:$iteration to start $app app failed"  ITEIAPALERTS@pepsico.com  <<< "automation to bring up this $app app got failed"
+				#mail -s "Warning Attempt:$iteration to start $app app failed"  ITEIAPALERTS@pepsico.com  <<< "automation to bring up this $app app got failed"
 				echo "For Iteration:$i restarting app $app"
 				cf $CF_SUB_COMMAND $app
 				#continue
