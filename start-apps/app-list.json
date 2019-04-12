@@ -1,5 +1,6 @@
 [
-{ "application": "hello-spring" },
-{ "application": "hello-spring-cloud" },
+{ "application": "billing" },
+{ "application": "PCF1-test" },
+{ "application": "PCF1-test" },
 { "application": "springmusic" }
 ]
