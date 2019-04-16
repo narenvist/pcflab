@@ -27,6 +27,7 @@ done
 
 for app in $applications
 do
+	echo $app
 	STATUS=`cf app $app | tail -n 1 | awk '{print $2}'`
     	i=1
 	while [ $i -le $COUNT ] 
