@@ -22,7 +22,7 @@ echo "$CF_SUB_COMMAND the app"
 
 for app in $applications
 do
-	cf $CF_SUB_COMMAND $app
+	cf $CF_SUB_COMMAND $app &
 done
 
 for app in $applications
